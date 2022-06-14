@@ -14,7 +14,7 @@ it('should return ColourFormat.CMYK', () => {
 
   const result = validate(input);
 
-  expect(result).toEqual(ColourFormat.NotSupported);
+  expect(result).toEqual(ColourFormat.CMYK);
 });
 
 it('should return ColourFormat.HSL', () => {

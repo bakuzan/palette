@@ -1,6 +1,7 @@
 import { ColourFormat } from '../constants/ColourFormat';
 import * as RGB from '../converters/fromRGB';
 import * as Hex from '../converters/fromHex';
+import * as CMYK from '../converters/fromCMYK';
 
 type ConverterFunc =
   | ((input: number[]) => number[])
@@ -8,16 +9,16 @@ type ConverterFunc =
   | ((input: string) => number[]);
 
 const converterMap = new Map([
-  // [
-  //   ColourFormat.CMYK,
-  //   new Map<ColourFormat, ConverterFunc>([
-  //     [ColourFormat.HSL, cmykToHsl],
-  //     [ColourFormat.HSV, cmykToHsv],
-  //     [ColourFormat.HWB, cmykToHwb],
-  //     [ColourFormat.Hex, cmykToHex],
-  //     [ColourFormat.RGB, cmykToRgb]
-  //   ])
-  // ],
+  [
+    ColourFormat.CMYK,
+    new Map<ColourFormat, ConverterFunc>([
+      [ColourFormat.HSL, CMYK.fromCMYKToHSL],
+      [ColourFormat.HSV, CMYK.fromCMYKToHSV],
+      [ColourFormat.HWB, CMYK.fromCMYKToHWB],
+      [ColourFormat.Hex, CMYK.fromCMYKToHex],
+      [ColourFormat.RGB, CMYK.fromCMYKToRGB]
+    ])
+  ],
   // [
   //   ColourFormat.HSL,
   //   new Map<ColourFormat, ConverterFunc>([

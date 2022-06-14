@@ -17,9 +17,9 @@ export default function validate(input: string) {
   }
 
   // todo : digit limit validation
-  // if (str.match(/^cmyk/) && str.slice(4).match(digitRegex)) {
-  //   return ColourFormat.CMYK;
-  // }
+  if (str.match(/^cmyk/) && str.slice(4).match(digitRegex)) {
+    return ColourFormat.CMYK;
+  }
 
   // if (str.match(/^hsl/) && str.slice(3).match(digitRegex)) {
   //   return ColourFormat.HSL;
