@@ -6,9 +6,15 @@ import {
 } from '../constants/regexes';
 import PaletteError from '../utils/error';
 
-const parseHexToDecimal = (h: string) => parseInt(h, 16);
+import { parseHexToDecimal } from './utils/hex';
+import {
+  fromRGBToCMYK,
+  fromRGBToHSL,
+  fromRGBToHSV,
+  fromRGBToHWB
+} from './fromRGB';
 
-export default function hexToRgb(hex: string) {
+export function fromHexToRGB(hex: string) {
   if (hex.match(hexRegex)) {
     return [
       parseHexToDecimal(hex.substr(1, 2)),
@@ -50,4 +56,20 @@ export default function hexToRgb(hex: string) {
   }
 
   throw new PaletteError(1);
+}
+
+export function fromHexToCMYK(hex: string) {
+  return fromRGBToCMYK(fromHexToRGB(hex));
+}
+
+export function fromHexToHSL(hex: string) {
+  return fromRGBToHSL(fromHexToRGB(hex));
+}
+
+export function fromHexToHSV(hex: string) {
+  return fromRGBToHSV(fromHexToRGB(hex));
+}
+
+export function fromHexToHWB(hex: string) {
+  return fromRGBToHWB(fromHexToRGB(hex));
 }

@@ -1,18 +1,9 @@
 import { ColourFormat } from './constants/ColourFormat';
 import { ColourValue } from './types/ColourValue';
-import { enumToName } from './utils';
+
 import PaletteError from './utils/error';
 import getConvertersForInputType from './utils/getConvertersForInputType';
-import toNumberArray from './utils/stringToNumberArray';
-
-function toStringFormat(format: ColourFormat, value: number[] | string) {
-  if (typeof value === 'string') {
-    return value;
-  }
-
-  const pre = enumToName(format).toLowerCase();
-  return `${pre}(${value.join(',')})`;
-}
+import { toNumberArray, toStringFormat } from './utils/formatters';
 
 export default function convert(format: ColourFormat, raw: string) {
   const results: ColourValue[] = [];
