@@ -1,7 +1,8 @@
 const ERRORS = new Map<number | string, string>([
   [0, 'An error occurred.'],
   [1, 'Unsupported hex format. Make sure you include the leading "#" symbol.'],
-  [2, 'Unable to convert colour string to digits.']
+  [2, 'Unable to convert colour string to digits.'],
+  [999, 'Unsupported colour space.']
 ]);
 
 function format(...args: any[]): string {

@@ -11,7 +11,7 @@ export default function convert(format: ColourFormat, raw: string) {
 
   const converters = getConvertersForInputType(format);
   if (!converters) {
-    throw new PaletteError(0);
+    throw new PaletteError(999);
   }
 
   const input = format === ColourFormat.Hex ? raw : toNumberArray(raw);
