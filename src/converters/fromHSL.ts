@@ -5,7 +5,7 @@ import {
   fromRGBToHWB
 } from './fromRGB';
 
-const roundOut = (n: number) => Math.min(Math.floor(n * 256), 255);
+const roundOut = (n: number) => n * 255; // Math.min(Math.floor(n * 256), 255);
 
 export function fromHSLToRGB(hsla: number[]) {
   let r = 0,

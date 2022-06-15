@@ -38,7 +38,7 @@ it('should return ColourFormat.HWB', () => {
 
   const result = validate(input);
 
-  expect(result).toEqual(ColourFormat.NotSupported);
+  expect(result).toEqual(ColourFormat.HWB);
 });
 
 it('should return ColourFormat.Hex', () => {
