@@ -21,9 +21,9 @@ export default function validate(input: string) {
     return ColourFormat.CMYK;
   }
 
-  // if (str.match(/^hsl/) && str.slice(3).match(digitRegex)) {
-  //   return ColourFormat.HSL;
-  // }
+  if (str.match(/^hsl/) && str.slice(3).match(digitRegex)) {
+    return ColourFormat.HSL;
+  }
 
   // if (str.match(/^hsv/) && str.slice(3).match(digitRegex)) {
   //   return ColourFormat.HSV;

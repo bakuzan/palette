@@ -22,7 +22,7 @@ it('should return ColourFormat.HSL', () => {
 
   const result = validate(input);
 
-  expect(result).toEqual(ColourFormat.NotSupported);
+  expect(result).toEqual(ColourFormat.HSL);
 });
 
 it('should return ColourFormat.HSV', () => {
