@@ -30,7 +30,7 @@ it('should return ColourFormat.HSV', () => {
 
   const result = validate(input);
 
-  expect(result).toEqual(ColourFormat.NotSupported);
+  expect(result).toEqual(ColourFormat.HSV);
 });
 
 it('should return ColourFormat.HWB', () => {

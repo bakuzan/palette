@@ -3,6 +3,7 @@ import * as RGB from '../converters/fromRGB';
 import * as Hex from '../converters/fromHex';
 import * as CMYK from '../converters/fromCMYK';
 import * as HSL from '../converters/fromHSL';
+import * as HSV from '../converters/fromHSV';
 
 type ConverterFunc =
   | ((input: number[]) => number[])
@@ -30,16 +31,16 @@ const converterMap = new Map([
       [ColourFormat.RGB, HSL.fromHSLToRGB]
     ])
   ],
-  // [
-  //   ColourFormat.HSV,
-  //   new Map<ColourFormat, ConverterFunc>([
-  //     [ColourFormat.CMYK, hsvToCmyk],
-  //     [ColourFormat.HSL, hsvToHsl],
-  //     [ColourFormat.HWB, hsvToHwb],
-  //     [ColourFormat.Hex, hsvToHex],
-  //     [ColourFormat.RGB, hsvToRgb]
-  //   ])
-  // ],
+  [
+    ColourFormat.HSV,
+    new Map<ColourFormat, ConverterFunc>([
+      [ColourFormat.CMYK, HSV.fromHSVToCMYK],
+      [ColourFormat.HSL, HSV.fromHSVToHSL],
+      [ColourFormat.HWB, HSV.fromHSVToHWB],
+      [ColourFormat.Hex, HSV.fromHSVToHex],
+      [ColourFormat.RGB, HSV.fromHSVToRGB]
+    ])
+  ],
   // [
   //   ColourFormat.HWB,
   //   new Map<ColourFormat, ConverterFunc>([

@@ -25,9 +25,9 @@ export default function validate(input: string) {
     return ColourFormat.HSL;
   }
 
-  // if (str.match(/^hsv/) && str.slice(3).match(digitRegex)) {
-  //   return ColourFormat.HSV;
-  // }
+  if (str.match(/^hsv/) && str.slice(3).match(digitRegex)) {
+    return ColourFormat.HSV;
+  }
 
   // if (str.match(/^hwb/) && str.slice(3).match(digitRegex)) {
   //   return ColourFormat.HWB;
